@@ -1,3 +1,41 @@
 {% extends 'base.html' %} {% block content %}
-<h1>This is meals page</h1>
+
+<div class="space-y-10">
+  <h1 class="text-4xl font-semibold text-primary text-center mt-5">
+    OUR POPULAR FOODS
+  </h1>
+
+  <div class="flex gap-7 justify-center">
+    {% for item in data %}
+    <img class="w-32" src="{{item.strCategoryThumb}}" alt="" />
+    {% endfor %}
+  </div>
+
+  <h1 class="text-2xl font-semibold text-center">Order Your Favourite Food</h1>
+
+  <div
+    class="flex flex-col md:flex-row flex-wrap items-start gap-10 justify-center"
+  >
+    {% for item in data %}
+    <a href="food/{{item.idCategory}}/{{item.strCategory|slugify}}">
+      <div class="card bg-base-200 w-90 shadow h-[410px]">
+        <figure class="px-10 pt-10">
+          <img
+            src="{{item.strCategoryThumb}}"
+            alt="{{item.strCategory}}"
+            class="rounded-xl"
+          />
+        </figure>
+        <div class="card-body space-y-5 text-start">
+          <h2 class="card-title">{{item.strCategory}}</h2>
+          <p>{{item.strCategoryDescription | truncatewords:20}}</p>
+          <div class="card-actions">
+            <button class="btn btn-primary">Order Now</button>
+          </div>
+        </div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
 {% endblock content %}
