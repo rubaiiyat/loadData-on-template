@@ -1,3 +1,26 @@
-{% extends 'base.html' %} {% block content %}
-<h1>This is home page</h1>
+{% extends 'base.html' %} {% load static %} {% block content %}
+<div
+  class="hero min-h-screen"
+  style="
+    background-image: url(https://www.farsagroup.com/static/home%20hero%20section%20image-9fed1c8677b1409ebe928a129adf20a2.webp);
+  "
+>
+  <div class="hero-overlay"></div>
+  <div class="hero-content text-neutral-content">
+    <div class="flex flex-col md:flex-row items-center gap-5">
+      <div class="text-center md:text-start">
+        <h1 class="mb-5 text-5xl font-bold">Enjoy Our Delicious Meal</h1>
+        <p class="mb-5">
+          Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu
+          diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet
+          lorem sit clita duo justo magna dolore erat amet
+        </p>
+        <button class="btn btn-primary">BOOK A TABLE</button>
+      </div>
+      <div>
+        <img class="" src="{% static 'hero.png' %}" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}
