@@ -3,4 +3,5 @@ from .import views
 urlpatterns = [
     path('meals', views.meals,name='menu'),
     path('about', views.about,name='about'),
+    path('meal/<int:id>/<slug:slug>/', views.meal_Details,name='meal_details'),
 ]

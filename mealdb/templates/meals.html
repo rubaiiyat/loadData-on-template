@@ -17,7 +17,7 @@
     class="flex flex-col md:flex-row flex-wrap items-start gap-10 justify-center"
   >
     {% for item in data %}
-    <a href="food/{{item.idCategory}}/{{item.strCategory|slugify}}">
+    <a href="{% url 'meal_details' item.idCategory item.strCategory|slugify %}">
       <div class="card bg-base-200 w-90 shadow h-[410px]">
         <figure class="px-10 pt-10">
           <img
